@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  width: 100%;
+  padding-bottom: 100vh;
+  height: 1000px auto;
+  overflow-anchor: none;
+  overflow-x: hidden;
+  background-color: #3f0d12;
+  background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+  background-repeat: no-repeat;
+}
+
+body .material-icons {
+  color: #0F2027;
+  font-size: medium;
+  cursor: pointer;
+  position: relative;
+}
+
+body .maincontainer {
+  height: 100%;
+  margin: 50px, 0px;
+}
+
+body .maincontainer .board {
+  margin: 50px, 0px;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 5%;
+  -ms-grid-rows: (minmax(10px, auto))[auto-fit];
+      grid-template-rows: repeat(auto-fit, minmax(10px, auto));
+  -ms-grid-columns: (minmax(10px, 200px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(10px, 200px));
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+body .maincontainer .board .lists {
+  padding: 2px 10px;
+  background: #ededed;
+}
+
+body .maincontainer .board .lists h4 {
+  color: #a71d31;
+  font-size: 14px;
+  margin: 1%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body .maincontainer .board .lists a {
+  display: inline-block;
+  color: #0F2027;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+body .maincontainer .board .lists form {
+  background: #e8e8e8;
+  margin-top: 30px;
+}
+
+body .maincontainer .board .lists form .submit {
+  margin: 1em 0em;
+  border: transparent;
+  color: #FFFFFF;
+  outline: transparent;
+  border-radius: 25px;
+  font-size: 12px;
+  background: #0F2027;
+  position: relative;
+  bottom: 3px;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#2C5364), color-stop(#203A43), to(#0F2027));
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body .maincontainer .board .lists form textarea {
+  height: 50px;
+  width: 95%;
+  background-color: transparent;
+  border: 1px solid #166D3B;
+  color: #0F2027;
+}
+
+body .maincontainer .board .lists .todoList {
+  width: 100%;
+}
+
+body .maincontainer .board .lists .todoList .item {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between space-evenly;
+  -webkit-box-shadow: -1px 3px 5px 0px rgba(50, 50, 50, 0.1);
+          box-shadow: -1px 3px 5px 0px rgba(50, 50, 50, 0.1);
+  padding: 3%;
+  margin: 5px 0px;
+  background: #f5f5f5;
+}
+
+body .maincontainer .board .lists .todoList .item:hover {
+  color: white;
+  background-color: #e0e0e0;
+}
+
+body .maincontainer .board .lists .todoList .item .label {
+  width: 80%;
+  height: fit-content(1fr);
+  word-spacing: 4px;
+  word-break: break-word;
+  -webkit-hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
+}
+
+body .maincontainer .board .lists .todoList .item .label:focus {
+  outline: 1px solid #1c2725;
+}
+
+header {
+  color: #dbdbdb;
+  text-align: center;
+  background: #0F2027;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#2C5364), color-stop(#203A43), to(#0F2027));
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 30px;
+  margin-bottom: 1em;
+}
+
+.configs {
+  width: 80px;
+  position: absolute;
+  margin-left: 300px;
+  opacity: 0;
+  height: 100%;
+}
+
+.configs span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.configs button {
+  background-color: #0f1417;
+  color: #dbdbdb;
+  border: none;
+  font-size: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

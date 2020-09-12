@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Trello</title>
+</head>
+<body>
+    <header>Trello</header>
+    <div class="maincontainer">
+        <div class="board" id='board'>
+            <div class="lists" id="0"><h4>Things To do</h4>     <a href="#">+Add to list</a>   </div>
+            <div class="lists" id="1"><h4>Doing</h4>            <a href="#">+Add to list</a>   </div>
+            <div class="lists" id="2"><h4>Done</h4>             <a href="#">+Add to list</a>   </div>
+        </div>
+        <div id="configs" class="configs">
+            <span id="delete" onclick="deleteHandler(event)">Delete</span>
+            <span id="change" onclick="changeHandler(event)">Change label</span>
+            <span id="move" onclick="moveHandler(e)">Move</span>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <style> 
+ 
+    
+    </style>
+</body>
+</html>
