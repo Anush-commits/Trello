@@ -90,10 +90,10 @@ function editHandler(event) {
 }
 function deleteHandler(e) {
     let objClass = e.target.parentNode.parentNode.parentNode.parentNode.id;
-    e.target.parentNode.paregentNode.remove();
-   for (const a in JSON.parse( localStora.getItem([objClass]))) {
-       if (JSON.parse( localStorage.getItem([objClass])).hasOwnProperty(a)) {
-          let obj = {...JSON.parse( localStorage.getItem([objClass]))};
+    e.target.parentNode.parentNode.remove();
+   for (const a in JSON.parse( localStorage.getItem(objClass))) {
+       if (JSON.parse( localStorage.getItem(objClass)).hasOwnProperty(a)) {
+          let obj = {...JSON.parse( localStorage.getItem(objClass))};
           delete obj[e.target.parentNode.parentNode.id]
           localStorage.setItem(`${objClass}`, JSON.stringify(obj));
        }
