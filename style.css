@@ -115,7 +115,6 @@ body .maincontainer .board .lists .todoList .item:hover {
 
 body .maincontainer .board .lists .todoList .item .label {
   width: 80%;
-  height: fit-content(1fr);
   word-spacing: 4px;
   word-break: break-word;
   -webkit-hyphens: manual;
@@ -142,17 +141,14 @@ header {
 }
 
 .configs {
-  width: 80px;
-  position: absolute;
-  margin-left: 300px;
-  opacity: 0;
-  height: 100%;
+  width: 150px;
+  position: relative;
+  left: 100px;
+  display: none;
 }
 
 .configs span {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-block;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;

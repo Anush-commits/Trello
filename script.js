@@ -1,4 +1,5 @@
 window.addEventListener('load', (e => {
+    console.log(localStorage);
     loopThroughNodes(...['.lists', , (l => l.id = `${l.id}a`)]);
     for (let e = 0; e < document.querySelectorAll('a').length; e++) {
         const list = document.createElement('div');
@@ -57,9 +58,8 @@ function changeHandler(event) {
     const btn = document.createElement('button');
     btn.innerText = 'Save';
     loopArr(event.target.parentNode.parentNode.children, (t => {
-        if (t.tagName == 'A') {
-            btn.addEventListener('click', (e => ChangeLabel(e, t.textContent)))
-        }
+         t.tagName == 'A' ?  btn.addEventListener('click', (e => ChangeLabel(e, t.textContent))) : null
+        
     }))
    loopArr(event.target.parentNode.children, (i =>  i.tagName == 'BUTTON' ? i.remove() : i))
     event.target.parentNode.appendChild(btn)
@@ -78,23 +78,25 @@ function ChangeLabel(e, txt) {
     let obj = {...JSON.parse(localStorage.getItem(classId)) }   
     loopThroughNodes(...['.edit',,(e => e.style.display = 'inline-block')])
     obj[id] = txt;
-     localStorage.setItem(classId, JSON.stringify(obj))
+    localStorage.setItem(classId, JSON.stringify(obj))
 }
 function editHandler(event) {
+    console.log('editHandler');
     loopThroughNodes('.configs', 'button', (b => b.remove()))
     loopThroughNodes(...['.label',,(l => l.contentEditable = false)])
     loopThroughNodes(...['.edit', , (e => e.style.display = 'inline-block')])
-    loopThroughNodes(...['.configs',, (e => e.style.opacity = '0') ])
-    loopArr(event.target.parentNode.children, (a => a.className === 'configs' ? a.style.opacity = '1' : a))
+    loopThroughNodes(...['.configs',, (e => e.style.display = 'none') ])
+    loopArr(event.target.parentNode.children, (a => a.className === 'configs' ? a.style.display = 'block' : a))
     event.target.style.display = 'none';
 }
-function deleteHandler(e) {
-    let objClass = e.target.parentNode.parentNode.parentNode.parentNode.id;
-    e.target.parentNode.parentNode.remove();
+function deleteHandler(event) {
+    console.log('deletehandler');
+    let objClass = event.target.parentNode.parentNode.parentNode.parentNode.id;
+    event.target.parentNode.parentNode.remove();
    for (const a in JSON.parse( localStorage.getItem(objClass))) {
        if (JSON.parse( localStorage.getItem(objClass)).hasOwnProperty(a)) {
           let obj = {...JSON.parse( localStorage.getItem(objClass))};
-          delete obj[e.target.parentNode.parentNode.id]
+          delete obj[event.target.parentNode.parentNode.id]
           localStorage.setItem(`${objClass}`, JSON.stringify(obj));
        }
    }
